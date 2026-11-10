@@ -14,3 +14,19 @@ html:has(.menu:popover-open) {
 
 .burger {
   cursor: pointer;}
+
+
+  .menu {
+  transition: 400ms allow-discrete; /* ici on dit que notre transition va durer 0.4 seconde */
+  opacity: 0; /* ici c'est pour dire que l'opacité de base du menu est 0 */
+}
+
+.menu:popover-open {
+  opacity: 1; /* ici ça dit quand le menu est ouvert il à une opacité de 1 */
+}
+
+@starting-style {
+  .menu:popover-open {
+    opacity: 0; /* ici c'est pour que quand la transition démarre le menu soit en opacité 0 */
+  }
+}
