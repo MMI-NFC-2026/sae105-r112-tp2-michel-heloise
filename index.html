@@ -13,17 +13,21 @@
 
     <!-- Menu principal -->
     <button class="burger" type="button" popovertarget="menu" aria-label="Menu">
+      <!--ajout de popovertarget="menu" au bouton burger pour le relier au menu et permettre son ouverture et sa fermeture sans JavaScript.-->
       🍔
     </button>
 
     <nav class="menu" id="menu" popover aria-label="Main menu">
+    <!-- transformation de l'élément <nav> en Popover grâce à l'attribut popover . -->
       <button class="menu__close burger burger--close" 
       type="button" 
       popovertarget="menu"
       popovertargetaction="hide"
-      aria-label="Close the menu"
+      aria-label="Close the menu" 
       autofocus
       >
+      <!-- ajout de popovertargetaction="hide" au bouton de fermeture pour permettre de fermer explicitement le menu lorsqu'on clique dessus. . -->
+      <!-- ajout de l'autofocus au bouton de fermeture pour que le focus soit automatiquement placé dessus lorsque le menu s'ouvre. . -->
         🍔
       </button>
       <ul class="menu__list">

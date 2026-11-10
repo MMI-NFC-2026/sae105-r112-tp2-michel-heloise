@@ -5,18 +5,22 @@
   height: 100%;
   border: 0;
 }
-
+/* width: 100% et height: 100% pour que le menu occupe toute la largeur et toute la hauteur de l'écran. On a également supprimé sa bordure avec border: 0 */
 
 html:has(.menu:popover-open) {
   overflow: hidden;
 }
+/* has() et :popover-open pour détecter lorsque le menu est ouvert. Avec overflow: hidden, on empêche l'utilisateur de faire défiler la page en arrière-plan. */
+
+
 
 
 .burger {
   cursor: pointer;}
+/* cursor: pointer pour afficher une petite main au survol du bouton burger et indiquer qu'il est cliquable. */
 
 
-  .menu {
+.menu {
   transition: 400ms allow-discrete; /* ici on dit que notre transition va durer 0.4 seconde */
   opacity: 0; /* ici c'est pour dire que l'opacité de base du menu est 0 */
 }
@@ -32,17 +36,19 @@ html:has(.menu:popover-open) {
 }
 
 
+
 @starting-style {
   .menu:popover-open .burger--close {
     transform: none;
   }
 }
 
+
 .menu:popover-open .burger--close {
   transform: rotate(90deg);
   transition: 400ms;
 }
-
+/* transform: rotate(90deg) pour faire tourner le bouton de fermeture lorsque le menu s'ouvre. On a ajouté une transition de 400 ms pour rendre la rotation progressive. */
 
 @media (prefers-reduced-motion: reduce) {
   .menu,
@@ -50,3 +56,4 @@ html:has(.menu:popover-open) {
     transition: none;
   }
 }
+/* @media (prefers-reduced-motion: reduce) pour détecter si l'utilisateur préfère réduire les animations. Avec transition: none, on désactive les transitions du menu et du bouton de fermeture pour respecter cette préférence.*/
